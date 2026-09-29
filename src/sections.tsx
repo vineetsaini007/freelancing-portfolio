@@ -224,13 +224,21 @@ const projects: Project[] = [
     sourceUrl: "https://github.com/vineetsaini007/sage-and-stone-wellness",
   },
   {
-    name: "Solaris Digital",
-    category: "Client",
-    summary: "A modern digital studio website concept.",
-    role: "Design and development",
-    stack: "React · TypeScript",
-    result: "A clear service-led website with a confident visual system.",
-    images: assets.slice(32, 35),
+    name: "Noura",
+    category: "Skincare E-commerce",
+    summary:
+      "A product-led skincare storefront with collection filtering, detailed formula views, bag management, and a simulated checkout.",
+    role: "Brand direction, UX/UI design, and frontend development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result:
+      "A responsive shopping experience with clear product discovery, functional cart controls, and a complete demonstration checkout flow.",
+    images: [
+      "/projects/noura-hero-products.png",
+      "/projects/noura-serum.png",
+      "/projects/noura-collection.png",
+    ],
+    liveUrl: "https://noura-skincare-store.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/noura-skincare-store",
   },
 ];
 function ProjectCard({
