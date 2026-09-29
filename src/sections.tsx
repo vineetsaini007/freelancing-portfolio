@@ -207,13 +207,21 @@ const projects: Project[] = [
     sourceUrl: "https://github.com/vineetsaini007/flowpilot-ai-planner",
   },
   {
-    name: "Aura Website Concept",
-    category: "Personal",
-    summary: "An experimental digital identity and website concept.",
-    role: "Design and development",
-    stack: "React · TypeScript",
-    result: "A responsive visual concept exploring art direction and motion.",
-    images: assets.slice(29, 32),
+    name: "Sage & Stone",
+    category: "Local Wellness Studio",
+    summary:
+      "A contemporary wellness-studio website that helps visitors understand treatments, meet practitioners, find the studio, and request an appointment.",
+    role: "Brand direction, UX/UI design, and frontend development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result:
+      "A warm, accessible booking journey with clear treatment comparison, practitioner profiles, location details, and a polished multi-step request flow.",
+    images: [
+      "/projects/sage-studio-hero.png",
+      "/projects/sage-warm-stones.png",
+      "/projects/sage-studio-lounge.png",
+    ],
+    liveUrl: "https://sage-and-stone-wellness.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/sage-and-stone-wellness",
   },
   {
     name: "Solaris Digital",
