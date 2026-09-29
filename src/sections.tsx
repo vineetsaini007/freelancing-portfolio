@@ -257,6 +257,23 @@ const projects: Project[] = [
     liveUrl: "https://pulseboard-growth-analytics.netlify.app/",
     sourceUrl: "https://github.com/vineetsaini007/pulseboard-analytics-dashboard",
   },
+  {
+    name: "LaunchCraft",
+    category: "Course Launch Campaign",
+    summary:
+      "A bold editorial launch page for a live course, designed to explain the transformation, build instructor trust, and move visitors into registration.",
+    role: "Campaign strategy, brand direction, UX/UI design, and development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result:
+      "A conversion-focused campaign with interactive curriculum, live countdown, social proof, pricing, and a validated two-step registration demonstration.",
+    images: [
+      "/projects/launchcraft-hero.svg",
+      "/projects/launchcraft-curriculum.svg",
+      "/projects/launchcraft-instructor.png",
+    ],
+    liveUrl: "https://launchcraft-live-course.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/launchcraft-course-studio",
+  },
 ];
 function ProjectCard({
   project,
