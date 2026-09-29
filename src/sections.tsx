@@ -240,6 +240,23 @@ const projects: Project[] = [
     liveUrl: "https://noura-skincare-store.netlify.app/",
     sourceUrl: "https://github.com/vineetsaini007/noura-skincare-store",
   },
+  {
+    name: "PulseBoard",
+    category: "Analytics Dashboard",
+    summary:
+      "A focused growth analytics workspace that turns campaign, revenue, acquisition, and conversion data into fast operational decisions.",
+    role: "Product strategy, UX/UI design, and frontend development",
+    stack: "React · TypeScript · Vite · SVG data visualization",
+    result:
+      "A responsive decision surface with date filtering, searchable and sortable campaign data, accessible charts, and complete loading, empty, and error states.",
+    images: [
+      "/projects/pulseboard-overview.svg",
+      "/projects/pulseboard-table.svg",
+      "/projects/pulseboard-states.svg",
+    ],
+    liveUrl: "https://pulseboard-growth-analytics.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/pulseboard-analytics-dashboard",
+  },
 ];
 function ProjectCard({
   project,
