@@ -481,6 +481,53 @@ footer {
   color: var(--muted);
   margin-bottom: 12px;
 }
+.project-dialog .project-summary {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+.project-meta div {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+}
+.project-meta dt {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.project-meta dd {
+  margin: 0;
+  line-height: 1.5;
+}
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 30px;
+}
+.project-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 13px;
+}
+.project-actions a:hover {
+  background: var(--ink);
+  color: white;
+}
 .project-dialog img {
   width: 100%;
   border-radius: 20px;
@@ -546,6 +593,11 @@ footer {
   .project-card header {
     gap: 24px;
   }
+}
+@media (max-width: 700px) {
+  .project-meta { grid-template-columns: 1fr; }
+  .project-actions { flex-direction: column; }
+  .project-actions a { justify-content: center; }
 }
 @media (max-width: 639px) {
   .marquee {

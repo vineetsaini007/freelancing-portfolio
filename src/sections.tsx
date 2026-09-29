@@ -176,18 +176,54 @@ export function ServicesSection() {
     </section>
   );
 }
-const projects = [
+type Project = {
+  name: string;
+  category: string;
+  summary: string;
+  role: string;
+  stack: string;
+  result: string;
+  images: string[];
+  liveUrl?: string;
+  sourceUrl?: string;
+};
+
+const projects: Project[] = [
   {
-    name: "Nextlevel Studio",
-    category: "Client",
-    images: assets.slice(26, 29),
+    name: "FlowPilot",
+    category: "SaaS Product Concept",
+    summary:
+      "A conversion-focused AI productivity website that turns scattered tasks, meetings, and priorities into a calm daily plan.",
+    role: "Brand direction, UX/UI design, and frontend development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result:
+      "A fast, accessible marketing experience with an interactive product demo, flexible pricing, FAQs, and a complete trial-signup flow.",
+    images: [
+      "/projects/flowpilot-preview-dashboard.svg",
+      "/projects/flowpilot-preview-pricing.svg",
+      "/projects/flowpilot-preview-mobile.svg",
+    ],
+    liveUrl: "https://flowpilot-ai-planner.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/flowpilot-ai-planner",
   },
   {
     name: "Aura Website Concept",
     category: "Personal",
+    summary: "An experimental digital identity and website concept.",
+    role: "Design and development",
+    stack: "React · TypeScript",
+    result: "A responsive visual concept exploring art direction and motion.",
     images: assets.slice(29, 32),
   },
-  { name: "Solaris Digital", category: "Client", images: assets.slice(32, 35) },
+  {
+    name: "Solaris Digital",
+    category: "Client",
+    summary: "A modern digital studio website concept.",
+    role: "Design and development",
+    stack: "React · TypeScript",
+    result: "A clear service-led website with a confident visual system.",
+    images: assets.slice(32, 35),
+  },
 ];
 function ProjectCard({
   project,
@@ -195,15 +231,15 @@ function ProjectCard({
   progress,
   onOpen,
 }: {
-  project: (typeof projects)[number];
+  project: Project;
   index: number;
   progress: MotionValue<number>;
   onOpen: () => void;
 }) {
   const scale = useTransform(
     progress,
-    [index / 3, 1],
-    [1, 1 - (2 - index) * 0.03],
+    [index / projects.length, 1],
+    [1, 1 - (projects.length - 1 - index) * 0.03],
   );
   const reduced = useReducedMotion();
   return (
@@ -289,10 +325,18 @@ export function ProjectsSection() {
         </button>
         <p>{projects[selected].category} / Selected work</p>
         <h3>{projects[selected].name}</h3>
-        <p>
-          Explore the visual direction below. Live website links will be added
-          when available.
-        </p>
+        <p className="project-summary">{projects[selected].summary}</p>
+        <dl className="project-meta">
+          <div><dt>Role</dt><dd>{projects[selected].role}</dd></div>
+          <div><dt>Stack</dt><dd>{projects[selected].stack}</dd></div>
+          <div><dt>Outcome</dt><dd>{projects[selected].result}</dd></div>
+        </dl>
+        {(projects[selected].liveUrl || projects[selected].sourceUrl) && (
+          <div className="project-actions">
+            {projects[selected].liveUrl && <a href={projects[selected].liveUrl} target="_blank" rel="noreferrer">Live site <ArrowUpRight size={17}/></a>}
+            {projects[selected].sourceUrl && <a href={projects[selected].sourceUrl} target="_blank" rel="noreferrer">View source <ArrowUpRight size={17}/></a>}
+          </div>
+        )}
         <div>
           {projects[selected].images.map((src, i) => (
             <img
