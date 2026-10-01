@@ -274,6 +274,23 @@ const projects: Project[] = [
     liveUrl: "https://launchcraft-live-course.netlify.app/",
     sourceUrl: "https://github.com/vineetsaini007/launchcraft-course-studio",
   },
+  {
+    name: "Northstar Realty",
+    category: "Real Estate Redesign",
+    summary:
+      "A fictional brokerage redesign that makes home discovery clearer through purposeful search, useful listing detail, and a more personal path to enquiry.",
+    role: "UX strategy, visual redesign, and frontend development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result:
+      "An interactive before-and-after story with property filtering, six demo listings, agent profiles, saved homes, and an enquiry preview flow.",
+    images: [
+      "/projects/northstar-coastal.jpg",
+      "/projects/northstar-penthouse.jpg",
+      "/projects/northstar-garden.jpg",
+    ],
+    liveUrl: "https://northstar-realty-redesign.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/northstar-realty-redesign",
+  },
 ];
 function ProjectCard({
   project,
