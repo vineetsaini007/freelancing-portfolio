@@ -269,7 +269,7 @@ const projects: Project[] = [
     images: [
       "/projects/launchcraft-hero.svg",
       "/projects/launchcraft-curriculum.svg",
-      "/projects/launchcraft-instructor.png",
+      "/projects/launchcraft-instructor.jpg",
     ],
     liveUrl: "https://launchcraft-live-course.netlify.app/",
     sourceUrl: "https://github.com/vineetsaini007/launchcraft-course-studio",
