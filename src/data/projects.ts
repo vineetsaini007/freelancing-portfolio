@@ -126,4 +126,22 @@ export const projects: Project[] = [
       outcome: "A fictional brokerage experience with six listings, working filters, saved homes, agent profiles, and a simulated enquiry flow.",
     },
   },
+  {
+    name: "Velocity Audit",
+    category: "Performance & SEO Case Study",
+    summary: "A transparent optimization case study that turns performance, accessibility, and technical SEO findings into an actionable implementation story.",
+    role: "Audit strategy, UX/UI design, technical content, and frontend development",
+    stack: "React · TypeScript · Vite · Responsive CSS",
+    result: "An interactive case study with mobile and desktop comparisons, filterable findings, documented improvements, and a privacy-conscious simulated audit flow.",
+    images: ["/projects/velocity-results.svg", "/projects/velocity-findings.svg", "/projects/velocity-method.svg"],
+    liveUrl: "https://velocity-audit-case-study.netlify.app/",
+    sourceUrl: "https://github.com/vineetsaini007/velocity-audit-case-study",
+    caseStudy: {
+      problem: "Performance reports often overwhelm clients with scores and technical warnings without explaining what should be fixed first or how the work affects real users.",
+      approach: "Frame the audit as an evidence-to-outcome narrative: establish comparable baselines, prioritize user-facing friction, document each implementation, and verify the same journeys afterward.",
+      decisions: ["Made before-and-after results switchable by device profile so the comparison remains concrete.", "Connected every finding to evidence, implementation detail, and outcome instead of presenting a generic checklist.", "Kept the URL audit explicitly simulated and local to the browser so the demonstration makes no false analysis or privacy claims."],
+      responsive: "Metric cards, audit findings, process phases, and the demo report progressively collapse into readable single-column flows, with a compact mobile navigation and full keyboard support.",
+      outcome: "A fictional but rigorously documented optimization case study demonstrating performance strategy, accessibility thinking, technical SEO, and transparent measurement.",
+    },
+  },
 ];
