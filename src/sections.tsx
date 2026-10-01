@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import { FadeIn, ContactButton } from "./components";
+import { projects, type Project } from "./data/projects";
 import assets from "./assets.json";
 export function MarqueeSection() {
   const ref = useRef<HTMLElement>(null);
@@ -176,122 +177,6 @@ export function ServicesSection() {
     </section>
   );
 }
-type Project = {
-  name: string;
-  category: string;
-  summary: string;
-  role: string;
-  stack: string;
-  result: string;
-  images: string[];
-  liveUrl?: string;
-  sourceUrl?: string;
-};
-
-const projects: Project[] = [
-  {
-    name: "FlowPilot",
-    category: "SaaS Product Concept",
-    summary:
-      "A conversion-focused AI productivity website that turns scattered tasks, meetings, and priorities into a calm daily plan.",
-    role: "Brand direction, UX/UI design, and frontend development",
-    stack: "React · TypeScript · Vite · Responsive CSS",
-    result:
-      "A fast, accessible marketing experience with an interactive product demo, flexible pricing, FAQs, and a complete trial-signup flow.",
-    images: [
-      "/projects/flowpilot-preview-dashboard.svg",
-      "/projects/flowpilot-preview-pricing.svg",
-      "/projects/flowpilot-preview-mobile.svg",
-    ],
-    liveUrl: "https://flowpilot-ai-planner.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/flowpilot-ai-planner",
-  },
-  {
-    name: "Sage & Stone",
-    category: "Local Wellness Studio",
-    summary:
-      "A contemporary wellness-studio website that helps visitors understand treatments, meet practitioners, find the studio, and request an appointment.",
-    role: "Brand direction, UX/UI design, and frontend development",
-    stack: "React · TypeScript · Vite · Responsive CSS",
-    result:
-      "A warm, accessible booking journey with clear treatment comparison, practitioner profiles, location details, and a polished multi-step request flow.",
-    images: [
-      "/projects/sage-studio-hero.png",
-      "/projects/sage-warm-stones.png",
-      "/projects/sage-studio-lounge.png",
-    ],
-    liveUrl: "https://sage-and-stone-wellness.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/sage-and-stone-wellness",
-  },
-  {
-    name: "Noura",
-    category: "Skincare E-commerce",
-    summary:
-      "A product-led skincare storefront with collection filtering, detailed formula views, bag management, and a simulated checkout.",
-    role: "Brand direction, UX/UI design, and frontend development",
-    stack: "React · TypeScript · Vite · Responsive CSS",
-    result:
-      "A responsive shopping experience with clear product discovery, functional cart controls, and a complete demonstration checkout flow.",
-    images: [
-      "/projects/noura-hero-products.png",
-      "/projects/noura-serum.png",
-      "/projects/noura-collection.png",
-    ],
-    liveUrl: "https://noura-skincare-store.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/noura-skincare-store",
-  },
-  {
-    name: "PulseBoard",
-    category: "Analytics Dashboard",
-    summary:
-      "A focused growth analytics workspace that turns campaign, revenue, acquisition, and conversion data into fast operational decisions.",
-    role: "Product strategy, UX/UI design, and frontend development",
-    stack: "React · TypeScript · Vite · SVG data visualization",
-    result:
-      "A responsive decision surface with date filtering, searchable and sortable campaign data, accessible charts, and complete loading, empty, and error states.",
-    images: [
-      "/projects/pulseboard-overview.svg",
-      "/projects/pulseboard-table.svg",
-      "/projects/pulseboard-states.svg",
-    ],
-    liveUrl: "https://pulseboard-growth-analytics.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/pulseboard-analytics-dashboard",
-  },
-  {
-    name: "LaunchCraft",
-    category: "Course Launch Campaign",
-    summary:
-      "A bold editorial launch page for a live course, designed to explain the transformation, build instructor trust, and move visitors into registration.",
-    role: "Campaign strategy, brand direction, UX/UI design, and development",
-    stack: "React · TypeScript · Vite · Responsive CSS",
-    result:
-      "A conversion-focused campaign with interactive curriculum, live countdown, social proof, pricing, and a validated two-step registration demonstration.",
-    images: [
-      "/projects/launchcraft-hero.svg",
-      "/projects/launchcraft-curriculum.svg",
-      "/projects/launchcraft-instructor.jpg",
-    ],
-    liveUrl: "https://launchcraft-live-course.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/launchcraft-course-studio",
-  },
-  {
-    name: "Northstar Realty",
-    category: "Real Estate Redesign",
-    summary:
-      "A fictional brokerage redesign that makes home discovery clearer through purposeful search, useful listing detail, and a more personal path to enquiry.",
-    role: "UX strategy, visual redesign, and frontend development",
-    stack: "React · TypeScript · Vite · Responsive CSS",
-    result:
-      "An interactive before-and-after story with property filtering, six demo listings, agent profiles, saved homes, and an enquiry preview flow.",
-    images: [
-      "/projects/northstar-coastal.jpg",
-      "/projects/northstar-penthouse.jpg",
-      "/projects/northstar-garden.jpg",
-    ],
-    liveUrl: "https://northstar-realty-redesign.netlify.app/",
-    sourceUrl: "https://github.com/vineetsaini007/northstar-realty-redesign",
-  },
-];
 function ProjectCard({
   project,
   index,
@@ -404,6 +289,13 @@ export function ProjectsSection() {
             {projects[selected].sourceUrl && <a href={projects[selected].sourceUrl} target="_blank" rel="noreferrer">View source <ArrowUpRight size={17}/></a>}
           </div>
         )}
+        <div className="case-study">
+          <div><h4>Problem</h4><p>{projects[selected].caseStudy.problem}</p></div>
+          <div><h4>Approach</h4><p>{projects[selected].caseStudy.approach}</p></div>
+          <div className="case-study-wide"><h4>Key decisions</h4><ul>{projects[selected].caseStudy.decisions.map((decision) => <li key={decision}>{decision}</li>)}</ul></div>
+          <div><h4>Responsive behavior</h4><p>{projects[selected].caseStudy.responsive}</p></div>
+          <div><h4>Outcome</h4><p>{projects[selected].caseStudy.outcome}</p></div>
+        </div>
         <div>
           {projects[selected].images.map((src, i) => (
             <img
