@@ -10,6 +10,7 @@ import {
   ServicesSection,
   ProjectsSection,
 } from "./sections";
+import { VideoEditingServicesPage } from "./video-editing";
 function Magnet({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0, active: false });
@@ -95,6 +96,10 @@ function HeroSection() {
   );
 }
 function App() {
+  if (window.location.pathname.startsWith("/video-editing-services")) {
+    return <VideoEditingServicesPage />;
+  }
+
   return (
     <main>
       <HeroSection />

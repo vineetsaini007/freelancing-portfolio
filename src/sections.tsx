@@ -133,46 +133,50 @@ export function AboutSection() {
     </section>
   );
 }
-const services = [
-  [
-    "Website Design",
-    "Custom website layouts built around your business, with clear navigation, thoughtful typography, and a consistent experience on every screen.",
-  ],
-  [
-    "Website Development",
-    "Responsive websites built with React and TypeScript, turning designs into accessible, reliable experiences that work smoothly across devices.",
-  ],
-  [
-    "Landing Pages",
-    "Focused pages for products, services, and campaigns, with clear messaging and calls to action that guide visitors toward the next step.",
-  ],
-  [
-    "Website Redesign",
-    "Give an existing website a fresh direction with improved structure, mobile usability, and a design that reflects where your business is today.",
-  ],
-  [
-    "Performance & SEO",
-    "Improve loading speed, accessibility, and technical SEO with optimized assets, semantic page structure, and search-friendly metadata.",
-  ],
+const websiteServices = [
+  ["Custom Website Development", "Responsive, custom-built websites shaped around your brand, goals, and customer journey."],
+  ["Shopify Store Development", "Conversion-focused storefronts with a polished shopping experience across desktop and mobile."],
+  ["WordPress Website Development", "Flexible, easy-to-manage business websites built with a dependable WordPress foundation."],
+  ["Performance & SEO", "Faster loading, accessible structure, optimized assets, and search-friendly technical foundations."],
 ];
+
+const videoEditingServices = [
+  ["Basic Cuts With Captions", "Clean pacing, polished cuts, and readable captions made for short-form content."],
+  ["Podcast Clipping Reel", "Turn long conversations into focused, engaging social clips that hold attention."],
+  ["UGC Ad Creative Editing", "Fast, persuasive edits for creator-led ads with hooks, captions, and clear calls to action."],
+  ["Daily Vlog", "Shape everyday footage into an energetic story with natural pacing and personality."],
+];
+
+function ServiceColumn({title,services}:{title:string;services:string[][]}){
+  return <div className="service-column">
+    <h3>{title}</h3>
+    <div className="services-list">
+      {services.map(([name,description],i)=><FadeIn key={name} delay={i*0.06}>
+        <article className="service">
+          <span className="number">{String(i+1).padStart(2,"0")}</span>
+          <div><h4>{name}</h4><p>{description}</p></div>
+        </article>
+      </FadeIn>)}
+    </div>
+  </div>;
+}
+
 export function ServicesSection() {
   return (
     <section id="services" className="services">
       <FadeIn>
         <h2>Services</h2>
       </FadeIn>
-      <div className="services-list">
-        {services.map(([name, description], i) => (
-          <FadeIn key={name} delay={i * 0.1}>
-            <article className="service">
-              <span className="number">0{i + 1}</span>
-              <div>
-                <h3>{name}</h3>
-                <p>{description}</p>
-              </div>
-            </article>
+      <div className="service-columns">
+        <ServiceColumn title="Website Services" services={websiteServices}/>
+        <div className="service-column-wrap">
+          <ServiceColumn title="Video Editing Services" services={videoEditingServices}/>
+          <FadeIn>
+            <a className="video-services-link" href="/video-editing-services/">
+              Explore all video editing services <ArrowUpRight size={22}/>
+            </a>
           </FadeIn>
-        ))}
+        </div>
       </div>
     </section>
   );
