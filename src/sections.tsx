@@ -6,7 +6,7 @@ import {
   useReducedMotion,
   type MotionValue,
 } from "framer-motion";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Mail, MessageCircle, X } from "lucide-react";
 import { FadeIn, ContactButton } from "./components";
 import { projects, type Project } from "./data/projects";
 import assets from "./assets.json";
@@ -309,7 +309,32 @@ export function ProjectsSection() {
       <div id="contact" className="contact-section">
         <p>Have a website in mind?</p>
         <h2 className="hero-heading">Let's talk.</h2>
-        <p>Contact details coming soon.</p>
+        <p className="contact-intro">Choose the way that works best for you.</p>
+        <div className="contact-options">
+          <a href="mailto:vineet31saini@gmail.com?subject=Website%20project%20enquiry">
+            <Mail size={20} aria-hidden="true" />
+            <span><small>Email me</small>vineet31saini@gmail.com</span>
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <a
+            href="https://wa.me/918595947790?text=Hi%20Vineet%2C%20I%27d%20like%20to%20discuss%20a%20website%20project."
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={20} aria-hidden="true" />
+            <span><small>WhatsApp</small>+91 85959 47790</span>
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <a
+            href="https://cal.com/vineetsaini001"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <CalendarDays size={20} aria-hidden="true" />
+            <span><small>Book a call</small>Choose a time that works for you</span>
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        </div>
       </div>
       <footer>
         <span>© {new Date().getFullYear()} Vineet</span>

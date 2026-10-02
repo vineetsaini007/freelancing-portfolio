@@ -35,7 +35,7 @@ The production files are generated in `dist/`. Deploy that directory to a static
 
 ## Customization
 
-Contact details and live project URLs are pending. Contact buttons currently navigate to the contact section; project buttons open image previews. Update these in `src/components.tsx` and `src/sections.tsx` when available.
+Contact buttons navigate to a contact section with email, WhatsApp, and Cal.com booking actions. Project buttons open detailed case studies with live-site and source links.
 
 Gallery and project imagery reference externally hosted assets supplied for this design; availability and usage rights should be reviewed before public launch. The unavailable Celestia gallery image is omitted from rendering.
 

@@ -447,6 +447,52 @@ h2 {
 .contact-section .contact-button {
   margin-top: 16px;
 }
+.contact-intro {
+  margin-bottom: 36px;
+}
+.contact-options {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  text-align: left;
+}
+.contact-options > a,
+.contact-options > span {
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  transition: transform .2s, background .2s, color .2s;
+}
+.contact-options > a:hover {
+  transform: translateY(-4px);
+  background: var(--ink);
+  color: white;
+}
+.contact-options > a > span,
+.contact-options > span > span {
+  min-width: 0;
+  flex: 1;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.contact-options small {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.contact-options > a:hover small {
+  color: #c5c8ce;
+}
 footer {
   border-top: 1px solid var(--line);
   padding: 28px 0;
@@ -627,6 +673,7 @@ footer {
   .project-meta { grid-template-columns: 1fr; }
   .project-actions { flex-direction: column; }
   .project-actions a { justify-content: center; }
+  .contact-options { grid-template-columns: 1fr; }
 }
 @media (max-width: 639px) {
   .marquee {
